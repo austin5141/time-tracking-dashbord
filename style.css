@@ -129,13 +129,13 @@ li:nth-of-type(1) {
     bottom:0.8rem;
 }
 
-.time {
+.curr {
     font-size:4rem;
     font-weight:300;
     color:white;
 }
 
-.prev {
+.previous-hours {
     font-weight:400;
     color:hsl(236, 100%, 87%);
 }
@@ -230,5 +230,11 @@ li:nth-of-type(1) {
         display:inline;
         margin-left:1.5rem;
         font-size:1.1rem;
+    }
+
+    .time {
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
     }
 }
