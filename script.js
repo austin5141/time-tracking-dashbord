@@ -8,9 +8,10 @@ let setting = "daily"
 // Function to render the page
 function render(object) {
 
-    titles = document.querySelectorAll('.title')
-    time = document.querySelectorAll('.time')
-    prev = document.querySelectorAll('.previous-hours')
+    let titles = document.querySelectorAll('.title')
+    let curr = document.querySelectorAll('.curr')
+    let prev = document.querySelectorAll('.previous-hours')
+    let last = document.querySelectorAll('.prev')
     
     switch(setting) {
         case "daily":
@@ -20,15 +21,14 @@ function render(object) {
             for (i = 0; i < titles.length; i++) {
                 titles[i].innerText = object[i].title
                 if (object[i].timeframes.daily.current == 1) {
-                    time[i].innerText = object[i].timeframes.daily.current + "hr"
+                    curr[i].innerText = object[i].timeframes.daily.current + "hr"
                 } else {
-                    time[i].innerText = object[i].timeframes.daily.current + "hrs"
+                    curr[i].innerText = object[i].timeframes.daily.current + "hrs"
                 }
-                
                 if (object[i].timeframes.daily.previous == 1) {
-                    prev[i].innerText = object[i].timeframes.daily.previous + "hr"
+                    prev[i].innerText = `Previous - ${object[i].timeframes.daily.previous} hr`
                 } else {
-                    prev[i].innerText = object[i].timeframes.daily.previous + "hrs"
+                    prev[i].innerText = `Previous - ${object[i].timeframes.daily.previous} hrs`
                 }
             };
             break;
@@ -40,15 +40,15 @@ function render(object) {
             for (i = 0; i < titles.length; i++) {
                 titles[i].innerText = object[i].title
                 if (object[i].timeframes.weekly.current == 1) {
-                    time[i].innerText = object[i].timeframes.weekly.current + "hr"
+                    curr[i].innerText = + object[i].timeframes.weekly.current + "hr"
                 } else {
-                    time[i].innerText = object[i].timeframes.weekly.current + "hrs"
+                    curr[i].innerText = object[i].timeframes.weekly.current + "hrs"
                 }
                 
                 if (object[i].timeframes.weekly.previous == 1) {
-                    prev[i].innerText = object[i].timeframes.weekly.previous + "hr"
+                    prev[i].innerText = `Last Week - ${object[i].timeframes.weekly.previous} hr`
                 } else {
-                    prev[i].innerText = object[i].timeframes.weekly.previous + "hrs"
+                    prev[i].innerText = `Last Week - ${object[i].timeframes.weekly.previous} hrs`
                 }
             };
             break;
@@ -60,15 +60,15 @@ function render(object) {
             for (i = 0; i < titles.length; i++) {
                 titles[i].innerText = object[i].title
                 if (object[i].timeframes.monthly.current == 1) {
-                    time[i].innerText = object[i].timeframes.monthly.current + "hr"
+                    curr[i].innerText = object[i].timeframes.monthly.current + "hr"
                 } else {
-                    time[i].innerText = object[i].timeframes.monthly.current + "hrs"
+                    curr[i].innerText = object[i].timeframes.monthly.current + "hrs"
                 }
                 
                 if (object[i].timeframes.monthly.previous == 1) {
-                    prev[i].innerText = object[i].timeframes.monthly.previous + "hr"
+                    prev[i].innerText = `Last Month - ${object[i].timeframes.monthly.previous} hr`
                 } else {
-                    prev[i].innerText = object[i].timeframes.monthly.previous + "hrs"
+                    prev[i].innerText = `Last Month - ${object[i].timeframes.monthly.previous} hrs`
                 }
             };
             break;
